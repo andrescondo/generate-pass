@@ -1,3 +1,5 @@
 const { generatePass } = require("./src");
 
-console.log(generatePass(10, 30, 3));
+console.time('prueba')
+generatePass(10, 1000, 3);
+console.timeEnd('prueba')

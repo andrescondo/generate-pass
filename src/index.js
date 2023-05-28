@@ -14,7 +14,7 @@ module.exports.generatePass = async (min = 8, max = 20, type = 2) => {
     let err = new Error();
     err.code = 400;
 
-    await validateParameters(min, max, type, err)
+    validateParameters(min, max, type, err)
 
     let length = generateLength(min, max);
 

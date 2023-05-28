@@ -17,7 +17,6 @@ module.exports.generateLength = (min, max) => {
     try {
         return Math.floor(Math.random() * (max - min + 1) + min);
     } catch (error) {
-        console.log(error)
         return 1;
     }
 }
@@ -31,12 +30,10 @@ module.exports.generateLength = (min, max) => {
  * 
  * @return void
  * */
-module.exports.validateParameters = async (min, max, type, err) => {
-
-    if(typeof(min) !== 'number' || typeof(max) !== 'number' || typeof(type) !== 'number'){
-        err.message = "Parameters must be numeric";
-        throw err;
-    }
+module.exports.validateParameters = (min, max, type, err) => {
+    validateNumber(min, err)
+    validateNumber(max, err)
+    validateNumber(type, err)
 
     if (type > 3 || type < 1) {
         err.message = "Enter a number (1, 2, 3) to choose the type";
@@ -52,4 +49,19 @@ module.exports.validateParameters = async (min, max, type, err) => {
         err.message = 'The maximum value 1000';
         throw err;
     }
+}
+
+/** validate number
+ * 
+ * @param number Integer value
+ * @param err Object body the error
+ * 
+ * @return void
+ * */
+const validateNumber = (number, err) => {
+    if (!Number.isInteger(number)) {
+        err.message = 'Parameters must be numeric and integers'
+        throw err;
+    }
+
 }
