@@ -1,0 +1,17 @@
+{
+  "name": "generate-pass",
+  "version": "1.0.0",
+  "description": "generate password uniqued",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "generate",
+    "password",
+    "pass",
+    "uniqued"
+  ],
+  "author": "andrescondo",
+  "license": "MIT"
+}
