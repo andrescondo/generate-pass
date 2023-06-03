@@ -1,6 +1,6 @@
 {
   "name": "generate-pass",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "generate password uniqued",
   "main": "src/index.js",
   "scripts": {

@@ -51,11 +51,11 @@ module.exports.validatePass = (min, max, type = 2, pass) => {
     let length = pass.length;
 
     if(length > max){
-        message = 'la contraseña larga del limite';
+        message = "the formate isn't correct";
     } else if(length < min){
-        message = 'la contraseña es mas corta que el limite';
+        message = "the formate isn't correct";
     } else {
-        message = 'cumple con el formato';
+        message = 'the formate the password is ok';
     }
 
     message = validateFormat(pass, type)
