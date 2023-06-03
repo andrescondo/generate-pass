@@ -1,6 +1,6 @@
 {
   "name": "generate-pass",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "generate password uniqued",
   "main": "src/index.js",
   "scripts": {
@@ -10,7 +10,8 @@
     "generate",
     "password",
     "pass",
-    "uniqued"
+    "uniqued",
+    "validate"
   ],
   "author": "andrescondo",
   "license": "MIT"

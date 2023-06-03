@@ -4,7 +4,47 @@ module.exports.CHARACTER = [
     'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
     '0123456789',
     '!@#$%^&*()+_-=}{[]|:;"/?.><,`~'
-];
+]
+
+let characterConcat = '';
+
+/** generate number of password length
+ * 
+ * @param type Number position max the character in array
+ * @param value Number value the index
+ * @param text String value the character concat
+ * */
+const concatCharacter = (type = 0, value = 0, text = '') => {
+    let index = value;
+    characterConcat = text + this.CHARACTER[index];
+
+    if (index === type) return characterConcat;
+    index++;
+    concatCharacter(type, index, characterConcat)
+
+}
+
+/** generate number of password length
+ * 
+ * @param pass String text the password
+ * @param type Number value the type of data
+ * 
+ * @returns String status message the password
+ * */
+module.exports.validateFormat = (pass='', type=0) => {
+    concatCharacter(type, 0)
+    let status = false;
+
+    for (const key in pass) {
+        status = characterConcat.includes(pass[key]);
+
+        if (!status) {
+            return 'La contraseña no cumple con el formato';
+        };
+    }
+
+    return 'La contraseña cumple con el formato'
+}
 
 /** generate number of password length
  * 
@@ -35,8 +75,8 @@ module.exports.validateParameters = (min, max, type, err) => {
     validateNumber(max, err)
     validateNumber(type, err)
 
-    if (type > 3 || type < 1) {
-        err.message = "Enter a number (1, 2, 3) to choose the type";
+    if (type > 3 || type < 0) {
+        err.message = "Enter a number (0, 1, 2, 3) to choose the type";
         throw err;
     }
 
