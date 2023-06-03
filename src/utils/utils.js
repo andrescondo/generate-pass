@@ -39,11 +39,11 @@ module.exports.validateFormat = (pass='', type=0) => {
         status = characterConcat.includes(pass[key]);
 
         if (!status) {
-            return 'La contraseña no cumple con el formato';
+            return 'The password does not comply with the format';
         };
     }
 
-    return 'La contraseña cumple con el formato'
+    return 'the formate the password is ok'
 }
 
 /** generate number of password length
